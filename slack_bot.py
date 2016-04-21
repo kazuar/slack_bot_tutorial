@@ -1,7 +1,7 @@
 import time
 from slackclient import SlackClient
 
-BOT_TOKEN = "xoxb-31588405443-2dZhFxP772yLVjGU2oWl3VKA"
+BOT_TOKEN = "<API_TOKEN>"
 CHANNEL_NAME = "general"
 
 def main():
@@ -23,6 +23,8 @@ def main():
                 sc.rtm_send_message(CHANNEL_NAME, "<@{}> wrote something...".format(user))
             # Sleep for half a second
             time.sleep(0.5)
+    else:
+        print("Couldn't connect to slack")
 
 if __name__ == '__main__':
     main()
